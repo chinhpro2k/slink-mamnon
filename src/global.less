@@ -1,0 +1,79 @@
+@import '~antd/es/style/themes/default.less';
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.colorWeak {
+  filter: invert(80%);
+}
+
+.ant-layout {
+  min-height: 100vh;
+}
+.ant-pro-sider.ant-layout-sider.ant-pro-sider-fixed {
+  left: unset;
+}
+.ant-card{
+  border-radius: 8px;
+  overflow: hidden;
+}
+//.ant-table-tbody > tr > td{
+//  background-color: #0099000d
+//}
+.grid-list-image {
+  display: grid;
+  //row-gap: 16px;
+  //column-gap: 16px;
+  grid-auto-rows: min-max(80px, auto);
+  grid-auto-flow: dense;
+  grid-gap: 2px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  img {
+    max-width: 200px;
+    cursor: pointer;
+    &:hover{
+      transform: translateY(-20px);
+    }
+  }
+}
+canvas {
+  display: block;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+@media (max-width: @screen-xs) {
+  .ant-table {
+    width: 100%;
+    overflow-x: auto;
+    &-thead > tr,
+    &-tbody > tr {
+      > th,
+      > td {
+        white-space: pre;
+        > span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// Compatible with IE11
+@media screen and(-ms-high-contrast: active), (-ms-high-contrast: none) {
+  body .ant-design-pro > .ant-layout {
+    min-height: 100vh;
+  }
+}
